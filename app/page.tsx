@@ -1,65 +1,223 @@
-import Image from "next/image";
+"use client";
+
+// ─────────────────────────────────────────────────────────────
+// app/page.tsx
+// HeroScene is a position:fixed overlay that covers everything.
+// Scene 1–6 sections sit in the normal document flow underneath.
+// When HeroScene completes its animation sequence, it fades out
+// and the user is already looking at Scene 1 (scroll position = 0).
+// ─────────────────────────────────────────────────────────────
+
+import { useState, useEffect, useRef, useCallback } from "react";
+import HeroScene from "@/components/scene0/HeroScene";
+import Navbar from "@/components/global/Navbar";
+import CustomCursor from "@/components/global/CustomCursor";
+import FilmGrain from "@/components/global/FilmGrain";
+import AboutScene from "@/components/scene1/AboutScene";
+import SkillsScene from "@/components/scene2/SkillsScene";
+import ProjectsScene from "@/components/scene3/ProjectsScene";
 
 export default function Home() {
+  const [navbarVisible, setNavbarVisible] = useState(false);
+  const [activeScene, setActiveScene] = useState("about");
+
+  // Scene refs for IntersectionObserver active tracking
+  const aboutRef = useRef<HTMLElement>(null);
+  const skillsRef = useRef<HTMLElement>(null);
+  const projectsRef = useRef<HTMLElement>(null);
+  const leadershipRef = useRef<HTMLElement>(null);
+  const achievementsRef = useRef<HTMLElement>(null);
+  const contactRef = useRef<HTMLElement>(null);
+
+  // Track active scene via IntersectionObserver
+  useEffect(() => {
+    const sceneRefs = [
+      { id: "about", ref: aboutRef },
+      { id: "skills", ref: skillsRef },
+      { id: "projects", ref: projectsRef },
+      { id: "leadership", ref: leadershipRef },
+      { id: "achievements", ref: achievementsRef },
+      { id: "contact", ref: contactRef },
+    ];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveScene(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    sceneRefs.forEach(({ ref }) => {
+      if (ref.current) observer.observe(ref.current);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleZoomComplete = useCallback(() => {
+    setNavbarVisible(true);
+  }, []);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {/* ── Global overlays ── */}
+      <CustomCursor />
+      <FilmGrain />
+      <Navbar visible={navbarVisible} activeScene={activeScene} />
+
+      {/* ── Hero Intro Overlay (fixed, z-50) ──
+          Plays its full phase sequence, then fades to reveal scenes below.
+          Does NOT occupy space in the document flow. */}
+      <HeroScene onZoomComplete={handleZoomComplete} />
+
+      {/* ════════════════════════════════════════════════════════
+          SCENE SECTIONS — in normal document flow.
+          Scene 1 is at scroll position 0 and is immediately
+          revealed when the HeroScene overlay fades out.
+          ════════════════════════════════════════════════════════ */}
+
+      {/* ── Scene 1: About Me ── */}
+      <AboutScene ref={aboutRef} />
+
+      {/* ── Scene 2: Skills ── */}
+      <SkillsScene ref={skillsRef} />
+
+      {/* ── Scene 3: Projects ── */}
+      <ProjectsScene ref={projectsRef} />
+
+      {/* ── Scene 4: Leadership ── (Phase 5) */}
+      <section
+        ref={leadershipRef}
+        id="leadership"
+        style={{
+          minHeight: "100vh",
+          background: "var(--color-bg-secondary)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+          gap: "1.5rem",
+          padding: "4rem 2rem",
+        }}
+      >
+        <div
+          style={{
+            fontFamily: "'JetBrains Mono', monospace",
+            fontSize: "0.65rem",
+            letterSpacing: "0.3em",
+            color: "#5A9E6F",
+            textTransform: "uppercase",
+          }}
+        >
+          Chapter 04
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <p
+          style={{
+            fontFamily: "'Playfair Display', serif",
+            fontWeight: 700,
+            fontSize: "clamp(2rem, 5vw, 3.5rem)",
+            color: "var(--color-text-primary)",
+            textAlign: "center",
+            letterSpacing: "-0.02em",
+          }}
+        >
+          Behind the Scenes
+        </p>
+        <p
+          style={{
+            fontFamily: "'DM Sans', sans-serif",
+            color: "var(--color-text-muted)",
+            fontSize: "0.85rem",
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+          }}
+        >
+          Scene 4 · Leadership — Coming in Phase 5
+        </p>
+      </section>
+
+      {/* ── Scene 5: Achievements ── (Phase 6) */}
+      <section
+        ref={achievementsRef}
+        id="achievements"
+        style={{
+          minHeight: "100vh",
+          background: "var(--color-bg-primary)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+          gap: "1.5rem",
+          padding: "4rem 2rem",
+        }}
+      >
+        <div
+          style={{
+            fontFamily: "'JetBrains Mono', monospace",
+            fontSize: "0.65rem",
+            letterSpacing: "0.3em",
+            color: "#C9A84C",
+            textTransform: "uppercase",
+          }}
+        >
+          Chapter 05
         </div>
-      </main>
-    </div>
+        <p
+          style={{
+            fontFamily: "'Playfair Display', serif",
+            fontWeight: 700,
+            fontSize: "clamp(2rem, 5vw, 3.5rem)",
+            color: "var(--color-text-primary)",
+            textAlign: "center",
+            letterSpacing: "-0.02em",
+          }}
+        >
+          The Headlines
+        </p>
+        <p
+          style={{
+            fontFamily: "'DM Sans', sans-serif",
+            color: "var(--color-text-muted)",
+            fontSize: "0.85rem",
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+          }}
+        >
+          Scene 5 · Achievements — Coming in Phase 6
+        </p>
+      </section>
+
+      {/* ── Scene 6: Contact ── (Phase 7) */}
+      <section
+        ref={contactRef}
+        id="contact"
+        style={{
+          minHeight: "100vh",
+          background: "var(--color-bg-secondary)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+          gap: "1.5rem",
+          padding: "4rem 2rem",
+        }}
+      >
+        <p
+          style={{
+            fontFamily: "'DM Sans', sans-serif",
+            color: "var(--color-text-muted)",
+            fontSize: "0.85rem",
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+          }}
+        >
+          Scene 6 · Contact — Coming in Phase 7
+        </p>
+      </section>
+    </>
   );
 }
