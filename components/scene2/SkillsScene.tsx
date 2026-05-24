@@ -205,7 +205,7 @@ export default function SkillsScene({ ref }: SkillsSceneProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               onClick={() => setExpandedCategory(null)}
-              className="absolute top-6 left-6 md:top-8 md:left-8 bg-[#161210] hover:bg-[#1E1A16] border border-[#F2EAD8]1F hover:border-[#F2EAD8]3F px-5 py-2.5 rounded-full cursor-pointer transition-all duration-300 z-50 text-[16px] tracking-[0.2em] font-lg flex items-center gap-2"
+              className="absolute top-6 left-6 md:top-8 md:left-8 bg-[#161210] hover:bg-[#1E1A16] border border-[#F2EAD8]1F hover:border-[#F2EAD8]3F px-5 py-2.5 rounded-full cursor-pointer transition-all duration-300 z-50 text-[12px] tracking-[0.2em] font-lg flex items-center gap-2"
               style={{
                 fontFamily: "'JetBrains Mono', monospace",
                 color: "var(--color-text-primary)",
@@ -230,7 +230,7 @@ export default function SkillsScene({ ref }: SkillsSceneProps) {
                   style={{
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
                     fontStyle: "italic",
-                    fontSize: "var(--text-chapter)",
+                    fontSize: "var(--text-body)",
                     letterSpacing: "0.3em",
                     color: "var(--color-accent-gold)",
                     textTransform: "uppercase",
@@ -281,7 +281,7 @@ export default function SkillsScene({ ref }: SkillsSceneProps) {
                   {expandedCategory.skills.map((skill) => (
                     <div
                       key={skill}
-                      className="text-[16px] font-lg border border-[#F2EAD8]0A bg-[#161210]50 py-2.5 px-4 rounded-[4px] flex items-center justify-start"
+                      className="text-[16px] font-lg border border-[#F2EAD8]0A bg-[#161210]50 py-2.5 px-4 rounded-[4px] flex items-center justify-center"
                       style={{
                         borderLeft: `2px solid ${expandedCategory.color}80`,
                       }}
@@ -290,8 +290,8 @@ export default function SkillsScene({ ref }: SkillsSceneProps) {
                         style={{
                           fontFamily: "'JetBrains Mono', monospace",
                           color: "var(--color-text-primary)",
-                          fontSize: "11px",
-                          letterSpacing: "-0.01em",
+                          fontSize: "16px",
+                          letterSpacing: "0.01em",
                         }}
                         className="block font-medium truncate"
                       >

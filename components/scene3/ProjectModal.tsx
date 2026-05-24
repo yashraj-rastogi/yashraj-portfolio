@@ -43,7 +43,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}
         onClick={onClose}
-        className="absolute top-6 left-6 md:top-8 md:left-8 bg-[#161210] hover:bg-[#1E1A16] border border-[#F2EAD8]1F hover:border-[#F2EAD8]3F px-5 py-2.5 rounded-full cursor-pointer transition-all duration-300 z-50 text-[10px] tracking-[0.2em] font-medium flex items-center gap-2"
+        className="absolute top-6 left-6 md:top-8 md:left-8 bg-[#161210] hover:bg-[#1E1A16] border border-[#F2EAD8]1F hover:border-[#F2EAD8]3F px-5 py-2.5 rounded-full cursor-pointer transition-all duration-300 z-50 text-[12px] tracking-[0.2em] font-medium flex items-center gap-2"
         style={{
           fontFamily: "'JetBrains Mono', monospace",
           color: "var(--color-text-primary)",
@@ -68,7 +68,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             style={{
               fontFamily: "'Cormorant Garamond', Georgia, serif",
               fontStyle: "italic",
-              fontSize: "var(--text-chapter)",
+              fontSize: "var(--text-body)",
               letterSpacing: "0.3em",
               color: "var(--color-accent-gold)",
               textTransform: "uppercase",
@@ -104,7 +104,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           {project.badge && (
             <div
-              className="mb-4 py-1 px-3 border rounded text-[10px] tracking-wider uppercase font-semibold block"
+              className="mb-4 py-3 px-3 border rounded text-[13px] tracking-wider uppercase font-semibold block"
               style={{
                 borderColor: `${accentColor}30`,
                 backgroundColor: `${accentColor}0A`,
@@ -120,7 +120,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             style={{
               fontFamily: "'DM Sans', sans-serif",
               color: "var(--color-text-secondary)",
-              fontSize: "0.95rem",
+              fontSize: "1.2rem",
               lineHeight: 1.65,
             }}
             className="mb-6 font-light text-left"
@@ -133,11 +133,11 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             <h4
               style={{
                 fontFamily: "'JetBrains Mono', monospace",
-                fontSize: "10px",
+                fontSize: "13px",
                 letterSpacing: "0.15em",
                 color: "var(--color-text-primary)",
               }}
-              className="uppercase font-bold mb-3"
+              className="uppercase font-semi-bold mb-3"
             >
               [ Key Contributions & Highlights ]
             </h4>
@@ -145,17 +145,17 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               {project.highlights.map((highlight) => (
                 <div
                   key={highlight}
-                  className="border border-[#F2EAD8]05 bg-[#161210]30 p-3 rounded flex items-start gap-2.5 text-left"
+                  className="border border-[#F2EAD8]05 bg-[#161210]30 p-3 rounded flex items-start gap-3 text-left"
                   style={{ borderLeft: `2px solid ${accentColor}40` }}
                 >
-                  <span style={{ color: accentColor }} className="text-xs pt-0.5">
+                  <span style={{ color: accentColor }} className="text-lg pt-1.5">
                     ✦
                   </span>
                   <span
                     style={{
                       fontFamily: "'DM Sans', sans-serif",
                       color: "var(--color-text-secondary)",
-                      fontSize: "12px",
+                      fontSize: "14px",
                       lineHeight: "1.5",
                     }}
                     className="block font-light"
@@ -196,13 +196,13 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 key={tech}
                 style={{
                   fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: "10px",
+                  fontSize: "0.8rem",
                   color: "var(--color-text-primary)",
                   borderColor: `${accentColor}26`,
                 }}
                 className="bg-[#161210] border px-3 py-1 rounded"
               >
-                {tech}
+                {tech} 💠
               </span>
             ))}
           </div>
@@ -214,7 +214,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 max-w-[200px] border border-[#F2EAD8]1F hover:border-[#F2EAD8]3F bg-[#161210] py-3 rounded-full text-center transition-all duration-300 text-[10px] tracking-[0.2em] font-semibold flex items-center justify-center gap-2"
+              className="flex-1 max-w-[200px] border border-[#F2EAD8]1F hover:border-[#F2EAD8]3F bg-[#161210] py-3 rounded-full text-center transition-all duration-300 text-[14px] tracking-[0.2em] font-semibold flex items-center justify-center gap-2.5"
               style={{
                 fontFamily: "'JetBrains Mono', monospace",
                 color: "var(--color-text-secondary)",
@@ -229,7 +229,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               href={project.liveDemo}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 max-w-[200px] py-3 rounded-full text-center transition-all duration-300 text-[10px] tracking-[0.2em] font-bold flex items-center justify-center gap-2 shadow-lg"
+              className="flex-1 max-w-[200px] py-3 rounded-full text-center transition-all duration-300 text-[14px] tracking-[0.2em] font-bold flex items-center justify-center gap-2.5 shadow-lg"
               style={{
                 fontFamily: "'JetBrains Mono', monospace",
                 backgroundColor: accentColor,

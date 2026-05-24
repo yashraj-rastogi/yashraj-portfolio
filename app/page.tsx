@@ -16,6 +16,7 @@ import FilmGrain from "@/components/global/FilmGrain";
 import AboutScene from "@/components/scene1/AboutScene";
 import SkillsScene from "@/components/scene2/SkillsScene";
 import ProjectsScene from "@/components/scene3/ProjectsScene";
+import LeadershipScene from "@/components/scene4/LeadershipScene";
 
 export default function Home() {
   const [navbarVisible, setNavbarVisible] = useState(false);
@@ -90,55 +91,7 @@ export default function Home() {
       <ProjectsScene ref={projectsRef} />
 
       {/* ── Scene 4: Leadership ── (Phase 5) */}
-      <section
-        ref={leadershipRef}
-        id="leadership"
-        style={{
-          minHeight: "100vh",
-          background: "var(--color-bg-secondary)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          flexDirection: "column",
-          gap: "1.5rem",
-          padding: "4rem 2rem",
-        }}
-      >
-        <div
-          style={{
-            fontFamily: "'JetBrains Mono', monospace",
-            fontSize: "0.65rem",
-            letterSpacing: "0.3em",
-            color: "#5A9E6F",
-            textTransform: "uppercase",
-          }}
-        >
-          Chapter 04
-        </div>
-        <p
-          style={{
-            fontFamily: "'Playfair Display', serif",
-            fontWeight: 700,
-            fontSize: "clamp(2rem, 5vw, 3.5rem)",
-            color: "var(--color-text-primary)",
-            textAlign: "center",
-            letterSpacing: "-0.02em",
-          }}
-        >
-          Behind the Scenes
-        </p>
-        <p
-          style={{
-            fontFamily: "'DM Sans', sans-serif",
-            color: "var(--color-text-muted)",
-            fontSize: "0.85rem",
-            letterSpacing: "0.15em",
-            textTransform: "uppercase",
-          }}
-        >
-          Scene 4 · Leadership — Coming in Phase 5
-        </p>
-      </section>
+      <LeadershipScene ref={leadershipRef} />
 
       {/* ── Scene 5: Achievements ── (Phase 6) */}
       <section

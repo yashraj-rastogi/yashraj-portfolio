@@ -23,8 +23,8 @@ export default function ProjectsScene({ ref }: ProjectsSceneProps) {
   });
 
   // Map scroll progress to horizontal translation on desktop
-  // Slides from 0% (first card in focus) to -56% (last card centers in focus)
-  const xTranslate = useTransform(scrollYProgress, [0, 1], ["0%", "-56%"]);
+  // Slides from 0% (first card in focus) to -70% (last card centers in focus)
+  const xTranslate = useTransform(scrollYProgress, [0, 1], ["0%", "-70%"]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -90,10 +90,10 @@ export default function ProjectsScene({ ref }: ProjectsSceneProps) {
             ──────────────────────────────────────────────────────── */}
         <div
           ref={scrollContainerRef}
-          className="hidden lg:block relative h-[250vh] w-full"
+          className="hidden lg:block relative h-[400vh] w-full"
         >
           {/* Inner Sticky Viewport Frame */}
-          <div className="sticky top-0 h-screen w-full flex flex-col justify-between pt-28 pb-16 overflow-hidden">
+          <div className="sticky top-0 h-screen w-full flex flex-col justify-between pt-20 pb-6 overflow-hidden">
             {/* Header Titles */}
             <motion.div
               variants={containerVariants}
@@ -251,14 +251,18 @@ export default function ProjectsScene({ ref }: ProjectsSceneProps) {
                   {/* Reuse desktop project card structure natively */}
                   <div className="w-full flex justify-center">
                     {/* Render standard card frame */}
-                    <div className="w-full max-w-sm rounded-xl border border-[#F2EAD8]0F bg-[#161210]A0 backdrop-blur-md overflow-hidden flex flex-col justify-between p-5 select-none transition-colors duration-500 hover:border-[#D4873A]40">
+                    <div className="w-full max-w-md h-[490px] rounded-xl border border-[#F2EAD8]0F bg-[#161210]D9 backdrop-blur-md overflow-hidden flex flex-col justify-between p-6 select-none transition-colors duration-500 hover:border-[#D4873A]40"
+                      style={{
+                        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.01)",
+                      }}
+                    >
                       {/* Viewfinder Corner Ticks */}
-                      <div className="absolute top-3 left-3 w-4 h-4 border-t border-l border-[#F2EAD8]20 pointer-events-none" />
-                      <div className="absolute top-3 right-3 w-4 h-4 border-t border-r border-[#F2EAD8]20 pointer-events-none" />
-                      <div className="absolute bottom-3 left-3 w-4 h-4 border-b border-l border-[#F2EAD8]20 pointer-events-none" />
-                      <div className="absolute bottom-3 right-3 w-4 h-4 border-b border-r border-[#F2EAD8]20 pointer-events-none" />
+                      <div className="absolute top-4 left-4 w-4 h-4 border-t border-l border-[#F2EAD8]20 pointer-events-none" />
+                      <div className="absolute top-4 right-4 w-4 h-4 border-t border-r border-[#F2EAD8]20 pointer-events-none" />
+                      <div className="absolute bottom-4 left-4 w-4 h-4 border-b border-l border-[#F2EAD8]20 pointer-events-none" />
+                      <div className="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-[#F2EAD8]20 pointer-events-none" />
 
-                      <div className="relative w-full h-[200px] rounded-lg overflow-hidden border border-[#F2EAD8]0A bg-[#0D0B09] flex-shrink-0">
+                      <div className="relative w-full h-[190px] rounded-lg overflow-hidden border border-[#F2EAD8]0A bg-[#0D0B09] flex-shrink-0">
                         <img
                           src={project.image}
                           alt={project.title}
@@ -270,8 +274,8 @@ export default function ProjectsScene({ ref }: ProjectsSceneProps) {
                             <span
                               style={{
                                 fontFamily: "'JetBrains Mono', monospace",
-                                fontSize: "7px",
-                                letterSpacing: "0.1em",
+                                fontSize: "8px",
+                                letterSpacing: "0.15em",
                                 color: project.accentColor || "var(--color-accent-amber)",
                               }}
                               className="font-bold block uppercase"
@@ -282,18 +286,18 @@ export default function ProjectsScene({ ref }: ProjectsSceneProps) {
                         )}
                       </div>
 
-                      <div className="flex flex-col items-start text-left w-full pt-4 justify-between">
-                        <div>
-                          <div className="flex flex-wrap gap-1.5 mb-2.5">
+                      <div className="flex flex-col items-start text-left w-full pt-4 flex-grow justify-between">
+                        <div className="w-full">
+                          <div className="flex flex-wrap gap-2 mb-3">
                             {project.techStack.slice(0, 3).map((tech) => (
                               <span
                                 key={tech}
                                 style={{
                                   fontFamily: "'JetBrains Mono', monospace",
-                                  fontSize: "8px",
-                                  color: "var(--color-text-muted)",
+                                  fontSize: "9.5px",
+                                  color: "var(--color-text-secondary)",
                                 }}
-                                className="bg-[#1E1A16]/40 border border-[#F2EAD8]05 px-2 py-0.5 rounded"
+                                className="bg-[#1E1A16]/50 border border-[#F2EAD8]0F px-2.5 py-0.5 rounded-sm"
                               >
                                 {tech}
                               </span>
@@ -305,7 +309,7 @@ export default function ProjectsScene({ ref }: ProjectsSceneProps) {
                               fontFamily: "'Playfair Display', Georgia, serif",
                               color: "#F2EAD8",
                             }}
-                            className="text-xl font-bold mb-1.5 leading-tight tracking-tight text-left"
+                            className="text-2xl font-bold mb-2 leading-snug tracking-tight text-left"
                           >
                             {project.title}
                           </h3>
@@ -315,33 +319,36 @@ export default function ProjectsScene({ ref }: ProjectsSceneProps) {
                               fontFamily: "'DM Sans', sans-serif",
                               color: "var(--color-text-secondary)",
                             }}
-                            className="text-[11.5px] leading-relaxed font-light mb-3 text-left w-full line-clamp-2"
+                            className="text-[13px] leading-relaxed font-light mb-3 text-left w-full line-clamp-3"
                           >
                             {project.oneLiner}
                           </p>
                         </div>
 
-                        <div className="w-full flex items-center justify-between pt-2 border-t border-[#F2EAD8]0F mt-2">
-                          <span
-                            style={{
-                              fontFamily: "'JetBrains Mono', monospace",
-                              fontSize: "8px",
-                              letterSpacing: "0.15em",
-                              color: "var(--color-text-muted)",
-                            }}
-                            className="font-bold"
-                          >
-                            [ TAP FOR DETAILS ]
-                          </span>
-                          <span
-                            style={{
-                              fontFamily: "'JetBrains Mono', monospace",
-                              fontSize: "10px",
-                              color: "var(--color-text-muted)",
-                            }}
-                          >
-                            →
-                          </span>
+                        <div className="w-full mt-auto">
+                          <div className="w-full h-[1px] bg-[#F2EAD8]0F relative overflow-hidden mb-2" />
+                          <div className="w-full flex items-center justify-between pt-1">
+                            <span
+                              style={{
+                                fontFamily: "'JetBrains Mono', monospace",
+                                fontSize: "9.5px",
+                                letterSpacing: "0.15em",
+                                color: "var(--color-text-muted)",
+                              }}
+                              className="font-bold"
+                            >
+                              [ TAP TO EXPLORE CELL ]
+                            </span>
+                            <span
+                              style={{
+                                fontFamily: "'JetBrains Mono', monospace",
+                                fontSize: "11px",
+                                color: "var(--color-text-muted)",
+                              }}
+                            >
+                              →
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>

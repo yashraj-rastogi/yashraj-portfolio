@@ -38,7 +38,7 @@
   /* ── Type Scale (fluid, clamp-based) ── */
   --text-hero:    clamp(3.5rem, 8vw, 8rem);
   --text-title:   clamp(2rem, 5vw, 4.5rem);
-  --text-chapter: clamp(0.65rem, 1.5vw, 0.8rem);
+  --text-chapter: clamp(0.8rem, 2vw, 1.25rem);
   --text-body:    clamp(1rem, 1.5vw, 1.125rem);
   --text-small:   clamp(0.75rem, 1vw, 0.875rem);
   --text-mono:    clamp(0.75rem, 1vw, 0.875rem);
@@ -83,7 +83,6 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
@@ -92,7 +91,6 @@ body {
   font-family: 'DM Sans', system-ui, sans-serif;
   font-weight: 300;
   line-height: 1.75;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
