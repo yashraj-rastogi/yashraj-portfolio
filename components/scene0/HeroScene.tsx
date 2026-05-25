@@ -444,7 +444,7 @@ export default function HeroScene({ onZoomComplete }: HeroSceneProps) {
                 textTransform: "uppercase",
               }}
             >
-              EST. 2024 · LUCKNOW, INDIA
+               LUCKNOW, INDIA
             </div>
 
             {/* Name — dual-layer cursor mask */}
