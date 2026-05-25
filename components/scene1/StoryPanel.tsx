@@ -68,7 +68,7 @@ export default function StoryPanel() {
             color: "var(--color-text-secondary)",
           }}
         >
-          I'm Yashraj — a Computer Science undergraduate who builds things that
+          I&apos;m Yashraj — a Computer Science undergraduate who builds things that
           matter. From real-time emergency platforms to AI-powered voice
           detection systems, I sit at the intersection of engineering, design,
           and human impact.
@@ -85,7 +85,7 @@ export default function StoryPanel() {
         >
           I started writing code not to get a job, but because I wanted to
           solve problems I actually cared about. That instinct led me to
-          national hackathon stages, Google's Ambassador program, and projects
+          national hackathon stages, Google&apos;s Ambassador program, and projects
           used by real people in real situations.
         </motion.p>
         <motion.p

@@ -16,7 +16,6 @@ export function MagneticText({ text, hoverText, className, baseStyle, hoverStyle
   const containerRef = useRef<HTMLDivElement>(null)
   const circleRef = useRef<HTMLDivElement>(null)
   const innerTextRef = useRef<HTMLDivElement>(null)
-  const [isHovered, setIsHovered] = useState(false)
   const isHoveredRef = useRef(false)
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 })
 
@@ -83,12 +82,10 @@ export function MagneticText({ text, hoverText, className, baseStyle, hoverStyle
     mousePos.current = { x, y }
     currentPos.current = { x, y }
     isHoveredRef.current = true
-    setIsHovered(true)
   }, [])
 
   const handleMouseLeave = useCallback(() => {
     isHoveredRef.current = false
-    setIsHovered(false)
   }, [])
 
   return (
@@ -169,7 +166,6 @@ export function MagneticQuote() {
   const containerRef = useRef<HTMLDivElement>(null)
   const circleRef = useRef<HTMLDivElement>(null)
   const innerTextRef = useRef<HTMLDivElement>(null)
-  const [isHovered, setIsHovered] = useState(false)
   const isHoveredRef = useRef(false)
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 })
 
@@ -246,12 +242,10 @@ export function MagneticQuote() {
     mousePos.current = { x, y }
     currentPos.current = { x, y }
     isHoveredRef.current = true
-    setIsHovered(true)
   }, [])
 
   const handleMouseLeave = useCallback(() => {
     isHoveredRef.current = false
-    setIsHovered(false)
   }, [])
 
   return (
@@ -280,7 +274,7 @@ export function MagneticQuote() {
         }}
         className="text-lg md:text-xl lg:text-2xl w-full text-left break-words block"
       >
-        "I don't just ship features. I build experiences that make people feel something."
+        &ldquo;I don&apos;t just ship features. I build experiences that make people feel something.&rdquo;
       </span>
 
       {/* ── Circle Mask Container (Solid spotlight cream color) ── */}
@@ -323,7 +317,7 @@ export function MagneticQuote() {
               }}
               className="text-lg md:text-xl lg:text-2xl w-full text-left break-words block"
             >
-              "Just flexing some cool animation, nothing serious!"
+              &ldquo;Just flexing some cool animation, nothing serious!&rdquo;
             </span>
           </div>
         </div>

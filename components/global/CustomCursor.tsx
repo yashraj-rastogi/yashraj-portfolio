@@ -24,8 +24,11 @@ export default function CustomCursor() {
   const springY = useSpring(cursorY, springConfig);
 
   useEffect(() => {
-    setIsTouchDevice(window.matchMedia("(hover: none)").matches);
-    setIsVisible(true);
+    const checkTouch = () => {
+      setIsTouchDevice(window.matchMedia("(hover: none)").matches);
+      setIsVisible(true);
+    };
+    requestAnimationFrame(checkTouch);
   }, []);
 
   useEffect(() => {

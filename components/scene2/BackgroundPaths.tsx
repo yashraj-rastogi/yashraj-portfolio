@@ -40,7 +40,7 @@ function FloatingPaths({ position, strokeColor }: { position: number; strokeColo
               pathOffset: [0, 1, 0],
             }}
             transition={{
-              duration: 20 + Math.random() * 10,
+              duration: 20 + Math.abs(Math.sin(path.id + 1)) * 10,
               repeat: Number.POSITIVE_INFINITY,
               ease: "linear",
             }}

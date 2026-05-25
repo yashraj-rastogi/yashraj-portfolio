@@ -106,7 +106,7 @@ export default function AchievementsScene({ ref }: AchievementsSceneProps) {
               }}
               className="uppercase"
             >
-              The Builder's Gazette
+              The Builder&apos;s Gazette
             </span>
 
             <span

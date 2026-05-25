@@ -139,9 +139,9 @@ export default function ContactScene({ ref }: ContactSceneProps) {
           }}
           className="mb-8 select-none pointer-events-none leading-relaxed"
         >
-          "The best time to build something meaningful was yesterday.<br />
+          &ldquo;The best time to build something meaningful was yesterday.<br />
           The second best time is right now.<br />
-          Let's build."
+          Let&apos;s build.&rdquo;
         </motion.blockquote>
 
         {/* Attribution */}

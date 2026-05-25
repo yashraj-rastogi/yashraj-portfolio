@@ -6,7 +6,7 @@ import { motion, type MotionValue } from "framer-motion";
 
 interface FilmReelTrackProps {
   projects: Project[];
-  x: MotionValue<any>;
+  x: MotionValue<string>;
   onCardClick: (project: Project) => void;
 }
 
