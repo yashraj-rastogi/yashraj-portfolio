@@ -139,9 +139,7 @@ export default function ContactScene({ ref }: ContactSceneProps) {
           }}
           className="mb-8 select-none pointer-events-none leading-relaxed"
         >
-          &ldquo;The best time to build something meaningful was yesterday.<br />
-          The second best time is right now.<br />
-          Let&apos;s build.&rdquo;
+          &ldquo;Decisions decide destiny..!!&rdquo;
         </motion.blockquote>
 
         {/* Attribution */}
@@ -160,6 +158,28 @@ export default function ContactScene({ ref }: ContactSceneProps) {
         >
           — Yashraj Rastogi
         </motion.div>
+
+        {/* Cinematic Closing Quote with preserved breaks */}
+        <motion.blockquote
+          variants={itemVariants}
+          style={{
+            fontFamily: "'Playfair Display', Georgia, serif",
+            fontStyle: "italic",
+            fontWeight: 700,
+            fontSize: "clamp(1.8rem, 4vw, 3.5rem)",
+            color: "var(--color-text-primary)",
+            lineHeight: "1.35",
+            letterSpacing: "-0.015em",
+            maxWidth: "850px",
+            textAlign: "center",
+            margin: "0 auto 2rem auto",
+          }}
+          className="mb-8 select-none pointer-events-none leading-relaxed"
+        >
+          &ldquo;The best time to build something meaningful was yesterday.<br />
+          The second best time is right now.<br />
+          Let&apos;s build.&rdquo;
+        </motion.blockquote>
 
         {/* Hidden Spotlight Reveal Text */}
         <motion.div
@@ -223,11 +243,11 @@ export default function ContactScene({ ref }: ContactSceneProps) {
         <p
           style={{
             fontFamily: "'DM Sans', sans-serif",
-            fontSize: "0.75rem",
+            fontSize: "0.9rem",
             letterSpacing: "0.15em",
-            color: "var(--color-text-secondary)",
+            color: "var(--color-text-primary)",
           }}
-          className="uppercase font-light tracking-widest text-[10px]"
+          className=" uppercase font-light tracking-widest text-[12px]"
         >
           © 2026 Yashraj Rastogi · Built with intention · Lucknow, India
         </p>

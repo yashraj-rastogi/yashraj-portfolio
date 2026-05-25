@@ -78,7 +78,7 @@ export default function CtaButtons() {
               download={btn.download ? "Yashraj_Rastogi_Resume.pdf" : undefined}
               style={{
                 fontFamily: "'JetBrains Mono', monospace",
-                fontSize: "0.8rem",
+                fontSize: "1.0rem",
                 letterSpacing: "0.08em",
                 color: "var(--color-accent-amber)",
                 borderColor: "rgba(212, 135, 58, 0.4)",

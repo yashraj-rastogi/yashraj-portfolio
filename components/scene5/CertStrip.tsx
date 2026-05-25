@@ -120,7 +120,7 @@ export default function CertStrip({ certifications }: CertStripProps) {
                   <div className="w-12 h-[1px] bg-[#0D0B09]/20" />
                   
                   <a
-                    href={`#credential-cert-${cert.name.toLowerCase().replace(/\s+/g, "-")}`}
+                    href={cert.credentialUrl || `#credential-cert-${cert.name.toLowerCase().replace(/\s+/g, "-")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{

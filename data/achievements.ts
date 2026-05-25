@@ -15,6 +15,7 @@ export interface Certification {
   name: string;
   issuer: string;
   year: string;
+  credentialUrl?: string;
 }
 
 export const achievements: Achievement[] = [
@@ -24,7 +25,7 @@ export const achievements: Achievement[] = [
     subhead:
       "Recognized at India AI Impact Buildathon for VoiceGuard, an AI-powered synthetic voice detection system",
     dateline: "HCL GUVI · February 2026",
-    credentialUrl: "#credential-voiceguard",
+    credentialUrl: "https://www.guvi.in/verify-certificate?id=8lA17t83Oc171254Vs",
   },
   {
     id: "universe-coderush",
@@ -46,7 +47,7 @@ export const achievements: Achievement[] = [
     subhead:
       "Mobile fire safety training app built and shipped for Google's developer challenge program",
     dateline: "GDG Solution Challenge 2025",
-    credentialUrl: "#credential-heat-sense",
+    credentialUrl: "https://certificate.hack2skill.com/user/gdgscsubmissions/2025H2S01GSC-I11860",
   },
 ];
 
@@ -55,15 +56,18 @@ export const certifications: Certification[] = [
     name: "Web Development",
     issuer: "Sololearn",
     year: "2024",
+    credentialUrl: "https://www.sololearn.com/en/certificates/CC-X5N51R2O",
   },
   {
     name: "Java",
     issuer: "Sololearn",
     year: "2024",
+    credentialUrl: "https://www.sololearn.com/en/certificates/CT-CD5ATFDK",
   },
   {
     name: "HeLa Crossroads",
     issuer: "HeLa Labs",
     year: "2024",
+    credentialUrl: "https://cdn.certifier.io/b997f3e6-396a-47f5-a85b-cd713f073bb1/credentials/01kcbdyn4bx62sq6j50tym2z6k/designs/01kcbdrf9d5qm27fy65eavvwaw/pKcgdumuQo.png",
   },
 ];
