@@ -17,6 +17,8 @@ import AboutScene from "@/components/scene1/AboutScene";
 import SkillsScene from "@/components/scene2/SkillsScene";
 import ProjectsScene from "@/components/scene3/ProjectsScene";
 import LeadershipScene from "@/components/scene4/LeadershipScene";
+import AchievementsScene from "@/components/scene5/AchievementsScene";
+import ContactScene from "@/components/scene6/ContactScene";
 
 export default function Home() {
   const [navbarVisible, setNavbarVisible] = useState(false);
@@ -94,83 +96,10 @@ export default function Home() {
       <LeadershipScene ref={leadershipRef} />
 
       {/* ── Scene 5: Achievements ── (Phase 6) */}
-      <section
-        ref={achievementsRef}
-        id="achievements"
-        style={{
-          minHeight: "100vh",
-          background: "var(--color-bg-primary)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          flexDirection: "column",
-          gap: "1.5rem",
-          padding: "4rem 2rem",
-        }}
-      >
-        <div
-          style={{
-            fontFamily: "'JetBrains Mono', monospace",
-            fontSize: "0.65rem",
-            letterSpacing: "0.3em",
-            color: "#C9A84C",
-            textTransform: "uppercase",
-          }}
-        >
-          Chapter 05
-        </div>
-        <p
-          style={{
-            fontFamily: "'Playfair Display', serif",
-            fontWeight: 700,
-            fontSize: "clamp(2rem, 5vw, 3.5rem)",
-            color: "var(--color-text-primary)",
-            textAlign: "center",
-            letterSpacing: "-0.02em",
-          }}
-        >
-          The Headlines
-        </p>
-        <p
-          style={{
-            fontFamily: "'DM Sans', sans-serif",
-            color: "var(--color-text-muted)",
-            fontSize: "0.85rem",
-            letterSpacing: "0.15em",
-            textTransform: "uppercase",
-          }}
-        >
-          Scene 5 · Achievements — Coming in Phase 6
-        </p>
-      </section>
+      <AchievementsScene ref={achievementsRef} />
 
       {/* ── Scene 6: Contact ── (Phase 7) */}
-      <section
-        ref={contactRef}
-        id="contact"
-        style={{
-          minHeight: "100vh",
-          background: "var(--color-bg-secondary)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          flexDirection: "column",
-          gap: "1.5rem",
-          padding: "4rem 2rem",
-        }}
-      >
-        <p
-          style={{
-            fontFamily: "'DM Sans', sans-serif",
-            color: "var(--color-text-muted)",
-            fontSize: "0.85rem",
-            letterSpacing: "0.15em",
-            textTransform: "uppercase",
-          }}
-        >
-          Scene 6 · Contact — Coming in Phase 7
-        </p>
-      </section>
+      <ContactScene ref={contactRef} />
     </>
   );
 }
