@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Cormorant_Garamond, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-
+import { Analytics } from "@vercel/analytics/next";
 // ── Font Definitions ──────────────────────────────────────────
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -82,9 +82,11 @@ export default function RootLayout({
         ${jetbrainsMono.variable}
       `}
     >
+      <Analytics>
       <body className="bg-[#0D0B09] text-[#F2EAD8] antialiased overflow-x-hidden">
         {children}
       </body>
+      </Analytics>
     </html>
   );
 }
