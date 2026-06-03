@@ -11,8 +11,15 @@ interface FilmReelTrackProps {
 }
 
 export default function FilmReelTrack({ projects, x, onCardClick }: FilmReelTrackProps) {
-  // Total length for sprocket hole repetition
+  // Pre-compute sprocket opacities to avoid hydration mismatch
+  // (Math.sin/cos inline produces different float serializations on server vs client)
   const totalSprockets = 120;
+  const topOpacities = Array.from({ length: totalSprockets }, (_, i) =>
+    parseFloat((0.35 + Math.sin(i * 0.1) * 0.1).toFixed(4))
+  );
+  const botOpacities = Array.from({ length: totalSprockets }, (_, i) =>
+    parseFloat((0.35 + Math.cos(i * 0.1) * 0.1).toFixed(4))
+  );
 
   return (
     <div className="relative w-full h-[510px] flex items-center justify-start overflow-hidden pointer-events-auto z-10 bg-gradient-to-b from-[#0D0B09] via-[#120E0B] to-[#0D0B09] border-t border-b border-[#F2EAD8]05">
@@ -31,7 +38,7 @@ export default function FilmReelTrack({ projects, x, onCardClick }: FilmReelTrac
                 key={`top-sprock-${i}`}
                 className="w-3.5 h-1.5 bg-[#D4873A] rounded-[1px] flex-shrink-0"
                 style={{
-                  opacity: 0.35 + Math.sin(i * 0.1) * 0.1, // Projector bulb flicker
+                  opacity: topOpacities[i],
                   boxShadow: "0 0 5px rgba(212, 135, 58, 0.4)",
                 }}
               />
@@ -108,7 +115,7 @@ export default function FilmReelTrack({ projects, x, onCardClick }: FilmReelTrac
                 key={`bot-sprock-${i}`}
                 className="w-3.5 h-1.5 bg-[#D4873A] rounded-[1px] flex-shrink-0"
                 style={{
-                  opacity: 0.35 + Math.cos(i * 0.1) * 0.1, // Bulb flicker variation
+                  opacity: botOpacities[i],
                   boxShadow: "0 0 5px rgba(212, 135, 58, 0.4)",
                 }}
               />

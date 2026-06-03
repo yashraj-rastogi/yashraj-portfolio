@@ -70,7 +70,7 @@ export default function NewspaperHeadline({ achievement }: NewspaperHeadlineProp
               fontSize: "0.7rem",
               fontWeight: 500,
               letterSpacing: "0.05em",
-              color: "#6B5C4A",
+              color: "#4A3D2E",
             }}
             className="uppercase"
           >
@@ -100,7 +100,7 @@ export default function NewspaperHeadline({ achievement }: NewspaperHeadlineProp
           style={{
             fontFamily: "'DM Sans', sans-serif",
             fontSize: "clamp(0.85rem, 1.2vw, 0.95rem)",
-            color: "#6B5C4A",
+            color: "#4A3D2E",
             lineHeight: "1.65",
             fontWeight: 400,
           }}

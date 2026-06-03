@@ -87,7 +87,7 @@ export default function AchievementsScene({ ref }: AchievementsSceneProps) {
                 fontFamily: "'JetBrains Mono', monospace",
                 fontSize: "clamp(0.6rem, 1vw, 0.75rem)",
                 fontWeight: 500,
-                color: "#6B5C4A",
+                color: "#4A3D2E",
                 letterSpacing: "0.15em",
               }}
               className="uppercase"
@@ -114,7 +114,7 @@ export default function AchievementsScene({ ref }: AchievementsSceneProps) {
                 fontFamily: "'JetBrains Mono', monospace",
                 fontSize: "clamp(0.6rem, 1vw, 0.75rem)",
                 fontWeight: 500,
-                color: "#6B5C4A",
+                color: "#4A3D2E",
                 letterSpacing: "0.15em",
               }}
               className="uppercase"
@@ -179,6 +179,23 @@ export default function AchievementsScene({ ref }: AchievementsSceneProps) {
         {/* ── Scrolling Certification Strip Ticker Tape ── */}
         <CertStrip certifications={certifications} />
       </motion.div>
+      <span
+        style={{
+          display: "block",
+          textAlign: "center",
+          fontFamily: "'JetBrains Mono', monospace",
+          fontSize: "0.65rem",
+          letterSpacing: "0.2em",
+          color: "#4A3D2E",
+          opacity: 0.6,
+          paddingTop: "3rem",
+          paddingBottom: "1rem",
+          textTransform: "uppercase",
+        }}
+      >
+        [ These are not real headlines — they are for creative purposes ]
+      </span>
     </section>
   );
+
 }

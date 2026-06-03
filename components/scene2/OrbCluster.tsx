@@ -230,7 +230,7 @@ export default function OrbCluster({
         <>
           {/* Inner */}
           <div
-            className="absolute rounded-full border border-dashed border-[#F2EAD8]05 pointer-events-none transition-all duration-500"
+            className="absolute rounded-full border border-dashed border-[#F2EAD8]/10 pointer-events-none transition-all duration-500"
             style={{
               width: isExpanded ? "160px" : "100px",
               height: isExpanded ? "160px" : "100px",
@@ -238,7 +238,7 @@ export default function OrbCluster({
           />
           {/* Middle */}
           <div
-            className="absolute rounded-full border border-dashed border-[#F2EAD8]05 pointer-events-none transition-all duration-500"
+            className="absolute rounded-full border border-dashed border-[#F2EAD8]/10 pointer-events-none transition-all duration-500"
             style={{
               width: isExpanded ? "270px" : "160px",
               height: isExpanded ? "270px" : "160px",
@@ -246,7 +246,7 @@ export default function OrbCluster({
           />
           {/* Outer */}
           <div
-            className="absolute rounded-full border border-dashed border-[#F2EAD8]05 pointer-events-none transition-all duration-500"
+            className="absolute rounded-full border border-dashed border-[#F2EAD8]/10 pointer-events-none transition-all duration-500"
             style={{
               width: isExpanded ? "380px" : "220px",
               height: isExpanded ? "380px" : "220px",
@@ -257,7 +257,7 @@ export default function OrbCluster({
         <>
           {/* Inner */}
           <div
-            className="absolute rounded-full border border-dashed border-[#F2EAD8]05 pointer-events-none transition-all duration-500"
+            className="absolute rounded-full border border-dashed border-[#F2EAD8]/10 pointer-events-none transition-all duration-500"
             style={{
               width: isExpanded ? "180px" : "110px",
               height: isExpanded ? "180px" : "110px",
@@ -265,7 +265,7 @@ export default function OrbCluster({
           />
           {/* Outer */}
           <div
-            className="absolute rounded-full border border-dashed border-[#F2EAD8]05 pointer-events-none transition-all duration-500"
+            className="absolute rounded-full border border-dashed border-[#F2EAD8]/10 pointer-events-none transition-all duration-500"
             style={{
               width: isExpanded ? "330px" : "190px",
               height: isExpanded ? "330px" : "190px",
@@ -301,9 +301,10 @@ export default function OrbCluster({
             style={{
               fontFamily: "'JetBrains Mono', monospace",
               color: isContainerHovered && !isExpanded ? "var(--color-accent-amber)" : color,
-              fontSize: isExpanded ? "10px" : "9px",
+              fontSize: isExpanded ? "11px" : "10px",
               fontWeight: 700,
               letterSpacing: "0.15em",
+              textShadow: isContainerHovered && !isExpanded ? `0 0 12px var(--color-accent-amber)` : `0 0 8px ${color}60`,
             }}
             className="transition-all duration-300 transform font-bold block"
           >
@@ -354,9 +355,9 @@ export default function OrbCluster({
           <span
             style={{
               fontFamily: "'JetBrains Mono', monospace",
-              fontSize: "8.5px",
+              fontSize: "10px",
               letterSpacing: "0.1em",
-              color: "var(--color-text-secondary)",
+              color: "var(--color-text-primary)",
             }}
           >
             [ CLICK TO FOCUS ]

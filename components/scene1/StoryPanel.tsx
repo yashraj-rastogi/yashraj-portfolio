@@ -62,7 +62,7 @@ export default function StoryPanel() {
           variants={itemVariants}
           style={{
             fontFamily: "'DM Sans', sans-serif",
-            fontWeight: 300,
+            fontWeight: 400,
             fontSize: "var(--text-body)",
             lineHeight: 1.8,
             color: "var(--color-text-secondary)",
@@ -77,7 +77,7 @@ export default function StoryPanel() {
           variants={itemVariants}
           style={{
             fontFamily: "'DM Sans', sans-serif",
-            fontWeight: 300,
+            fontWeight: 400,
             fontSize: "var(--text-body)",
             lineHeight: 1.8,
             color: "var(--color-text-secondary)",
@@ -92,7 +92,7 @@ export default function StoryPanel() {
           variants={itemVariants}
           style={{
             fontFamily: "'DM Sans', sans-serif",
-            fontWeight: 300,
+            fontWeight: 400,
             fontSize: "var(--text-body)",
             lineHeight: 1.8,
             color: "var(--color-text-secondary)",
@@ -132,7 +132,7 @@ export default function StoryPanel() {
             fontFamily: "'DM Sans', sans-serif",
             fontWeight: 400,
             fontSize: "var(--text-small)",
-            color: "var(--color-text-muted)",
+            color: "var(--color-text-secondary)",
           }}
         >
           <span className="text-base select-none">📍</span>
@@ -146,7 +146,7 @@ export default function StoryPanel() {
             fontFamily: "'DM Sans', sans-serif",
             fontWeight: 400,
             fontSize: "var(--text-small)",
-            color: "var(--color-text-muted)",
+            color: "var(--color-text-secondary)",
           }}
         >
           <span className="text-base select-none">🎓</span>
@@ -160,7 +160,7 @@ export default function StoryPanel() {
             fontFamily: "'DM Sans', sans-serif",
             fontWeight: 400,
             fontSize: "var(--text-small)",
-            color: "var(--color-text-muted)",
+            color: "var(--color-text-secondary)",
           }}
         >
           <span className="text-base select-none">🏆</span>
@@ -174,7 +174,7 @@ export default function StoryPanel() {
             fontFamily: "'DM Sans', sans-serif",
             fontWeight: 400,
             fontSize: "var(--text-small)",
-            color: "var(--color-text-muted)",
+            color: "var(--color-text-secondary)",
           }}
         >
           <span className="text-base select-none">🤝</span>

@@ -16,7 +16,7 @@
   /* ── Text ── */
   --color-text-primary:   #F2EAD8;
   --color-text-secondary: #A89880;
-  --color-text-muted:     #6B5C4A;
+  --color-text-muted:     #8B7A64;
 
   /* ── Accents ── */
   --color-accent-amber: #D4873A;
@@ -31,7 +31,7 @@
   --color-orb-tools:    #8B6BB1;
 
   /* ── Utility ── */
-  --color-border:        rgba(242, 234, 216, 0.08);
+  --color-border:        rgba(242, 234, 216, 0.12);
   --color-overlay:       rgba(13, 11, 9, 0.85);
   --color-grain-opacity: 0.04;
 
@@ -209,7 +209,7 @@ body::after {
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
   transition: color var(--duration-base) ease;
   text-decoration: none;
 }

@@ -29,7 +29,7 @@ export default function SkillOrb({
   const [isHovered, setIsHovered] = useState(false);
 
   // Expanded mode dimensions vs. Normal mode dimensions
-  const orbSize = isExpanded ? 76 : 56;
+  const orbSize = isExpanded ? 86 : 64;
   const marginOffset = -orbSize / 2;
 
   // Decide what label text to show inside the orb body
@@ -84,8 +84,8 @@ export default function SkillOrb({
         <span
           style={{
             fontFamily: "'JetBrains Mono', monospace",
-            color: isHovered ? "#F2EAD8" : "var(--color-text-secondary)",
-            fontSize: isExpanded ? "9.5px" : "10px",
+            color: isHovered ? "#F2EAD8" : "var(--color-text-primary)",
+            fontSize: isExpanded ? "10.5px" : "11px",
             lineHeight: "1.15",
             fontWeight: 500,
             letterSpacing: "-0.02em",

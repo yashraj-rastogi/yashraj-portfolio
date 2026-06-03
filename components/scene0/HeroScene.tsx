@@ -439,7 +439,7 @@ export default function HeroScene({ onZoomComplete }: HeroSceneProps) {
                 fontFamily: "'JetBrains Mono', monospace",
                 fontSize: "clamp(0.6rem, 1vw, 0.72rem)",
                 letterSpacing: "0.3em",
-                color: "var(--color-text-muted)",
+                color: "var(--color-text-secondary)",
                 marginBottom: "1.25rem",
                 textTransform: "uppercase",
               }}
@@ -462,7 +462,8 @@ export default function HeroScene({ onZoomComplete }: HeroSceneProps) {
                   fontSize: "var(--text-hero)",
                   letterSpacing: "-0.02em",
                   lineHeight: 0.92,
-                  color: "#1C1610",
+                  color: "#3D3226",
+                  textShadow: "0 0 60px rgba(212,135,58,0.12)",
                   userSelect: "none",
                   whiteSpace: "nowrap",
                 }}
@@ -501,9 +502,9 @@ export default function HeroScene({ onZoomComplete }: HeroSceneProps) {
                 zIndex: 1,
                 fontFamily: "'DM Sans', sans-serif",
                 fontWeight: 300,
-                fontSize: "clamp(0.75rem, 1.8vw, 1rem)",
+                fontSize: "clamp(0.85rem, 2vw, 1.15rem)",
                 letterSpacing: "0.1em",
-                color: "var(--color-text-muted)",
+                color: "var(--color-text-secondary)",
                 marginTop: "1.5rem",
                 textAlign: "center",
               }}
@@ -612,10 +613,10 @@ export default function HeroScene({ onZoomComplete }: HeroSceneProps) {
             <span
               style={{
                 fontFamily: "'JetBrains Mono', monospace",
-                fontSize: "0.62rem",
+                fontSize: "0.8rem",
                 letterSpacing: "0.28em",
                 textTransform: "uppercase",
-                color: "var(--color-text-muted)",
+                color: "var(--color-text-secondary)",
               }}
             >
               scroll to explore

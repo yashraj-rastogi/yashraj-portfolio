@@ -107,7 +107,7 @@ export default function CertStrip({ certifications }: CertStripProps) {
                   style={{
                     fontFamily: "'DM Sans', sans-serif",
                     fontSize: "0.85rem",
-                    color: "#6B5C4A",
+                    color: "#4A3D2E",
                     lineHeight: "1.5",
                   }}
                   className="font-light mb-4"
@@ -139,7 +139,7 @@ export default function CertStrip({ certifications }: CertStripProps) {
                     style={{
                       fontFamily: "'JetBrains Mono', monospace",
                       fontSize: "0.65rem",
-                      color: "#6B5C4A",
+                      color: "#4A3D2E",
                       borderColor: "rgba(13, 11, 9, 0.2)",
                     }}
                     className="border px-2 py-0.5 rounded-sm uppercase select-none font-medium"

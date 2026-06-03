@@ -123,7 +123,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               fontSize: "1.2rem",
               lineHeight: 1.65,
             }}
-            className="mb-6 font-light text-left"
+            className="mb-6 font-normal text-left"
           >
             {project.brief}
           </p>
@@ -155,10 +155,10 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     style={{
                       fontFamily: "'DM Sans', sans-serif",
                       color: "var(--color-text-secondary)",
-                      fontSize: "14px",
+                      fontSize: "15px",
                       lineHeight: "1.5",
                     }}
-                    className="block font-light"
+                    className="block font-normal"
                   >
                     {highlight}
                   </span>
@@ -198,7 +198,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   fontFamily: "'JetBrains Mono', monospace",
                   fontSize: "0.8rem",
                   color: "var(--color-text-primary)",
-                  borderColor: `${accentColor}26`,
+                  borderColor: `${accentColor}40`,
                 }}
                 className="bg-[#161210] border px-3 py-1 rounded"
               >
@@ -217,7 +217,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               className="flex-1 max-w-[200px] border border-[#F2EAD8]1F hover:border-[#F2EAD8]3F bg-[#161210] py-3 rounded-full text-center transition-all duration-300 text-[14px] tracking-[0.2em] font-semibold flex items-center justify-center gap-2.5"
               style={{
                 fontFamily: "'JetBrains Mono', monospace",
-                color: "var(--color-text-secondary)",
+                color: "var(--color-text-primary)",
               }}
               data-cursor="link"
             >
