@@ -82,11 +82,11 @@ export default function RootLayout({
         ${jetbrainsMono.variable}
       `}
     >
-      <Analytics>
+      
       <body className="bg-[#0D0B09] text-[#F2EAD8] antialiased overflow-x-hidden">
         {children}
       </body>
-      </Analytics>
+      <Analytics />
     </html>
   );
 }
