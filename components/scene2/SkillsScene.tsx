@@ -132,7 +132,7 @@ export default function SkillsScene({ ref }: SkillsSceneProps) {
               marginBottom: "0.5rem",
             }}
           >
-            CHAPTER 02
+            CHAPTER 03
           </motion.div>
 
           {/* Section Title */}
@@ -238,7 +238,7 @@ export default function SkillsScene({ ref }: SkillsSceneProps) {
                   }}
                   className="block"
                 >
-                  CHAPTER 02.{expandedCategory.id.substring(0, 1).toUpperCase()}
+                  CHAPTER 03.{expandedCategory.id.substring(0, 1).toUpperCase()}
                 </span>
                 
                 <h3

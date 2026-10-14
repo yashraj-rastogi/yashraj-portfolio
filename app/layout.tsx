@@ -85,8 +85,8 @@ export default function RootLayout({
       
       <body className="bg-[#0D0B09] text-[#F2EAD8] antialiased overflow-x-hidden">
         {children}
+        <Analytics />
       </body>
-      <Analytics />
     </html>
   );
 }

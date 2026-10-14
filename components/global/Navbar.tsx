@@ -13,18 +13,19 @@ import { motion, AnimatePresence } from "framer-motion";
 interface NavbarProps {
   visible: boolean;
   activeScene: string;
+  onGoToHero?: () => void;
 }
 
 const navLinks = [
   { label: "About", href: "#about" },
+  { label: "Works", href: "#projects" },
   { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
   { label: "Leadership", href: "#leadership" },
   { label: "Achievements", href: "#achievements" },
   { label: "Contact", href: "#contact" },
 ];
 
-export default function Navbar({ visible, activeScene }: NavbarProps) {
+export default function Navbar({ visible, activeScene, onGoToHero }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleLinkClick = useCallback(
@@ -57,7 +58,11 @@ export default function Navbar({ visible, activeScene }: NavbarProps) {
             href="#"
             onClick={(e) => {
               e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
+              if (onGoToHero) {
+                onGoToHero();
+              } else {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
             }}
             className="font-display"
             style={{

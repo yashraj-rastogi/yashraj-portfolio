@@ -115,7 +115,7 @@ export default function ProjectsScene({ ref }: ProjectsSceneProps) {
                   marginBottom: "0.5rem",
                 }}
               >
-                CHAPTER 03
+                CHAPTER 02
               </motion.div>
 
               {/* Section Title */}
@@ -197,7 +197,7 @@ export default function ProjectsScene({ ref }: ProjectsSceneProps) {
               }}
               className="block"
             >
-              CHAPTER 03
+              CHAPTER 02
             </span>
 
             {/* Section Title */}
