@@ -102,8 +102,7 @@ export const projects: Project[] = [
       "ElevenLabs",
       "Paytm sandbox",
     ],
-    // TODO: [FILL IN: Confirm whether event is Hack-e-Awadh Paytm PS-02 or CodeBlitz 2.0 AI & Automation]
-    badge: "Hack-e-Awadh · Paytm PS-02",
+    badge: "Hack-e-Awadh · Paytm PS-02 (Merchant Growth AI)",
     liveDemo: "https://fin-buddy-inky-xi.vercel.app/",
     github: "https://github.com/yashraj-rastogi/Fin-Buddy",
     image: "/images/projects/finbuddy.png",
