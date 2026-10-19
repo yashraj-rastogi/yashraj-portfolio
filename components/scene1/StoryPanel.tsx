@@ -86,7 +86,7 @@ export default function StoryPanel() {
           I started writing code not to get a job, but because I wanted to
           solve problems I actually cared about. That instinct led me to
           national hackathon stages, Google&apos;s Ambassador program, and projects
-          used by real people in real situations.
+          built for real-world problems.
         </motion.p>
         <motion.p
           variants={itemVariants}
@@ -164,7 +164,7 @@ export default function StoryPanel() {
           }}
         >
           <span className="text-base select-none">🏆</span>
-          <span>5th Rank · India AI Impact Buildathon · 40,000+ participants</span>
+          <span>5th Rank nationally among 40,000+ participants · India AI Impact Buildathon</span>
         </motion.div>
 
         <motion.div
@@ -178,7 +178,7 @@ export default function StoryPanel() {
           }}
         >
           <span className="text-base select-none">🤝</span>
-          <span>Google Student Ambassador · GID: 3263</span>
+          <span>AlgoZenith SRMCEM Co-Lead · Technical Lead</span>
         </motion.div>
       </motion.div>
     </motion.div>

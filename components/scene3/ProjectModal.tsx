@@ -76,7 +76,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             }}
             className="block"
           >
-            SCENE 03 / PROJECT
+            CHAPTER 02 / PROJECT
           </span>
 
           <h3
@@ -104,7 +104,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           {project.badge && (
             <div
-              className="mb-4 py-3 px-3 border rounded text-[13px] tracking-wider uppercase font-semibold block"
+              className="mb-3 py-2.5 px-3 border rounded text-[12px] tracking-wider uppercase font-semibold block"
               style={{
                 borderColor: `${accentColor}30`,
                 backgroundColor: `${accentColor}0A`,
@@ -116,11 +116,28 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </div>
           )}
 
+          {project.outcome && (
+            <div
+              className="mb-4 py-2 px-3 border-l-2 text-[12px] tracking-wide block"
+              style={{
+                borderColor: accentColor,
+                backgroundColor: "rgba(242, 234, 216, 0.03)",
+                color: "var(--color-text-primary)",
+                fontFamily: "'DM Sans', sans-serif",
+              }}
+            >
+              <strong style={{ color: accentColor, fontFamily: "'JetBrains Mono', monospace" }} className="uppercase text-[11px] block mb-0.5">
+                Key Outcome:
+              </strong>
+              {project.outcome}
+            </div>
+          )}
+
           <p
             style={{
               fontFamily: "'DM Sans', sans-serif",
               color: "var(--color-text-secondary)",
-              fontSize: "1.2rem",
+              fontSize: "1.15rem",
               lineHeight: 1.65,
             }}
             className="mb-6 font-normal text-left"
@@ -171,21 +188,52 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         {/* Right Column: Visual Frame and Demo Links */}
         <div className="w-full lg:w-6/12 flex flex-col items-center gap-6">
           {/* Cover Media viewport */}
-          <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-[#F2EAD8]0F bg-[#161210] flex-shrink-0 shadow-2xl">
+          <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-[#F2EAD8]/10 bg-[#161210] flex-shrink-0 shadow-2xl">
             {/* Viewfinder corner overlays */}
-            <div className="absolute top-4 left-4 w-5 h-5 border-t-2 border-l-2 border-[#F2EAD8]30 pointer-events-none z-10" />
-            <div className="absolute top-4 right-4 w-5 h-5 border-t-2 border-r-2 border-[#F2EAD8]30 pointer-events-none z-10" />
-            <div className="absolute bottom-4 left-4 w-5 h-5 border-b-2 border-l-2 border-[#F2EAD8]30 pointer-events-none z-10" />
-            <div className="absolute bottom-4 right-4 w-5 h-5 border-b-2 border-r-2 border-[#F2EAD8]30 pointer-events-none z-10" />
+            <div className="absolute top-4 left-4 w-5 h-5 border-t-2 border-l-2 border-[#F2EAD8]/30 pointer-events-none z-10" />
+            <div className="absolute top-4 right-4 w-5 h-5 border-t-2 border-r-2 border-[#F2EAD8]/30 pointer-events-none z-10" />
+            <div className="absolute bottom-4 left-4 w-5 h-5 border-b-2 border-l-2 border-[#F2EAD8]/30 pointer-events-none z-10" />
+            <div className="absolute bottom-4 right-4 w-5 h-5 border-b-2 border-r-2 border-[#F2EAD8]/30 pointer-events-none z-10" />
 
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              sizes="(max-w-7xl) 600px, 400px"
-              priority
-              className="object-cover"
-            />
+            {/* Viewfinder Live Badge */}
+            {project.video && (
+              <div className="absolute top-3 right-4 z-20 flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-[#0D0B09]/80 backdrop-blur-md border border-[#F2EAD8]/15 select-none pointer-events-none">
+                <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+                <span
+                  style={{
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontSize: "8.5px",
+                    letterSpacing: "0.15em",
+                    color: "var(--color-text-secondary)",
+                  }}
+                  className="font-bold uppercase"
+                >
+                  LIVE LOOP
+                </span>
+              </div>
+            )}
+
+            {project.video ? (
+              <video
+                src={project.video}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="w-full h-full object-cover"
+                poster={project.image}
+              />
+            ) : (
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                sizes="(max-width: 1024px) 100vw, 600px"
+                priority
+                className="object-cover"
+              />
+            )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
           </div>
 
@@ -208,38 +256,42 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           </div>
 
           {/* Live Navigation Links */}
-          <div className="flex gap-4 w-full justify-center">
+          <div className="flex flex-wrap gap-4 w-full justify-center">
             {/* Github Button */}
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 max-w-[200px] border border-[#F2EAD8]1F hover:border-[#F2EAD8]3F bg-[#161210] py-3 rounded-full text-center transition-all duration-300 text-[14px] tracking-[0.2em] font-semibold flex items-center justify-center gap-2.5"
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                color: "var(--color-text-primary)",
-              }}
-              data-cursor="link"
-            >
-              <span>{`</>`}</span> GITHUB CODE
-            </a>
+            {project.github && project.github !== "#" && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 max-w-[200px] border border-[#F2EAD8]1F hover:border-[#F2EAD8]3F bg-[#161210] py-3 rounded-full text-center transition-all duration-300 text-[14px] tracking-[0.2em] font-semibold flex items-center justify-center gap-2.5"
+                style={{
+                  fontFamily: "'JetBrains Mono', monospace",
+                  color: "var(--color-text-primary)",
+                }}
+                data-cursor="link"
+              >
+                <span>{`</>`}</span> GITHUB
+              </a>
+            )}
 
             {/* Live Demo Button */}
-            <a
-              href={project.liveDemo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 max-w-[200px] py-3 rounded-full text-center transition-all duration-300 text-[14px] tracking-[0.2em] font-bold flex items-center justify-center gap-2.5 shadow-lg"
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                backgroundColor: accentColor,
-                color: "var(--color-bg-primary)",
-                boxShadow: `0 8px 24px ${accentColor}33`,
-              }}
-              data-cursor="link"
-            >
-              <span>✦</span> LAUNCH DEMO
-            </a>
+            {project.liveDemo && project.liveDemo !== "#" && (
+              <a
+                href={project.liveDemo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 max-w-[200px] py-3 rounded-full text-center transition-all duration-300 text-[14px] tracking-[0.2em] font-bold flex items-center justify-center gap-2.5 shadow-lg"
+                style={{
+                  fontFamily: "'JetBrains Mono', monospace",
+                  backgroundColor: accentColor,
+                  color: "var(--color-bg-primary)",
+                  boxShadow: `0 8px 24px ${accentColor}33`,
+                }}
+                data-cursor="link"
+              >
+                <span>✦</span> LIVE DEMO
+              </a>
+            )}
           </div>
         </div>
       </motion.div>

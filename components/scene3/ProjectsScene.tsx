@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { projects, type Project } from "@/data/projects";
 import FilmReelTrack from "./FilmReelTrack";
@@ -251,26 +252,28 @@ export default function ProjectsScene({ ref }: ProjectsSceneProps) {
                   {/* Reuse desktop project card structure natively */}
                   <div className="w-full flex justify-center">
                     {/* Render standard card frame */}
-                    <div className="w-full max-w-md h-[490px] rounded-xl border border-[#F2EAD8]0F bg-[#161210]D9 backdrop-blur-md overflow-hidden flex flex-col justify-between p-6 select-none transition-colors duration-500 hover:border-[#D4873A]40"
+                    <div className="w-full max-w-md min-h-[500px] h-auto rounded-xl border border-[#F2EAD8]/10 bg-[#161210]/90 backdrop-blur-md overflow-hidden flex flex-col justify-between p-6 select-none transition-colors duration-500 hover:border-[#D4873A]/40"
                       style={{
                         boxShadow: "0 10px 30px rgba(0, 0, 0, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.01)",
                       }}
                     >
                       {/* Viewfinder Corner Ticks */}
-                      <div className="absolute top-4 left-4 w-4 h-4 border-t border-l border-[#F2EAD8]20 pointer-events-none" />
-                      <div className="absolute top-4 right-4 w-4 h-4 border-t border-r border-[#F2EAD8]20 pointer-events-none" />
-                      <div className="absolute bottom-4 left-4 w-4 h-4 border-b border-l border-[#F2EAD8]20 pointer-events-none" />
-                      <div className="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-[#F2EAD8]20 pointer-events-none" />
+                      <div className="absolute top-4 left-4 w-4 h-4 border-t border-l border-[#F2EAD8]/20 pointer-events-none" />
+                      <div className="absolute top-4 right-4 w-4 h-4 border-t border-r border-[#F2EAD8]/20 pointer-events-none" />
+                      <div className="absolute bottom-4 left-4 w-4 h-4 border-b border-l border-[#F2EAD8]/20 pointer-events-none" />
+                      <div className="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-[#F2EAD8]/20 pointer-events-none" />
 
-                      <div className="relative w-full h-[190px] rounded-lg overflow-hidden border border-[#F2EAD8]0A bg-[#0D0B09] flex-shrink-0">
-                        <img
+                      <div className="relative w-full h-[190px] rounded-lg overflow-hidden border border-[#F2EAD8]/10 bg-[#0D0B09] flex-shrink-0">
+                        <Image
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-full object-cover"
+                          fill
+                          sizes="(max-width: 640px) 100vw, 420px"
+                          className="object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#161210]/60 via-transparent to-[#161210]/10 pointer-events-none" />
                         {project.badge && (
-                          <div className="absolute top-3 left-3 bg-[#0D0B09]/80 backdrop-blur-md px-2.5 py-1 rounded border border-[#F2EAD8]1F">
+                          <div className="absolute top-3 left-3 bg-[#0D0B09]/80 backdrop-blur-md px-2.5 py-1 rounded border border-[#F2EAD8]/20">
                             <span
                               style={{
                                 fontFamily: "'JetBrains Mono', monospace",
@@ -289,7 +292,7 @@ export default function ProjectsScene({ ref }: ProjectsSceneProps) {
                       <div className="flex flex-col items-start text-left w-full pt-4 flex-grow justify-between">
                         <div className="w-full">
                           <div className="flex flex-wrap gap-2 mb-3">
-                            {project.techStack.slice(0, 3).map((tech) => (
+                            {project.techStack.slice(0, 4).map((tech) => (
                               <span
                                 key={tech}
                                 style={{
@@ -297,7 +300,7 @@ export default function ProjectsScene({ ref }: ProjectsSceneProps) {
                                   fontSize: "9.5px",
                                   color: "var(--color-text-secondary)",
                                 }}
-                                className="bg-[#1E1A16]/50 border border-[#F2EAD8]0F px-2.5 py-0.5 rounded-sm"
+                                className="bg-[#1E1A16]/50 border border-[#F2EAD8]/10 px-2.5 py-0.5 rounded-sm"
                               >
                                 {tech}
                               </span>
@@ -323,6 +326,54 @@ export default function ProjectsScene({ ref }: ProjectsSceneProps) {
                           >
                             {project.oneLiner}
                           </p>
+
+                          {/* One-line outcome if present */}
+                          {project.outcome && (
+                            <div className="mb-3 px-2.5 py-1.5 rounded bg-[#D4873A]/10 border border-[#D4873A]/25">
+                              <p
+                                style={{
+                                  fontFamily: "'JetBrains Mono', monospace",
+                                  color: "#F2EAD8",
+                                }}
+                                className="text-[11px] leading-tight font-medium text-left"
+                              >
+                                <span className="text-[#D4873A] font-semibold mr-1.5">OUTCOME:</span>
+                                {project.outcome}
+                              </p>
+                            </div>
+                          )}
+
+                          {/* Action Links: Live Demo & GitHub */}
+                          {(Boolean(project.liveDemo && project.liveDemo !== "#") || Boolean(project.github && project.github !== "#")) && (
+                            <div className="flex items-center gap-2 mb-3 z-10">
+                              {project.liveDemo && project.liveDemo !== "#" && (
+                                <a
+                                  href={project.liveDemo}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={(e) => e.stopPropagation()}
+                                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                                  className="inline-flex items-center gap-1.5 px-2.5 py-1 text-[10px] tracking-wider uppercase font-semibold text-[#161210] bg-[#D4873A] hover:bg-[#F2EAD8] rounded transition-colors duration-200"
+                                >
+                                  <span>Live Demo</span>
+                                  <span>↗</span>
+                                </a>
+                              )}
+                              {project.github && project.github !== "#" && (
+                                <a
+                                  href={project.github}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={(e) => e.stopPropagation()}
+                                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                                  className="inline-flex items-center gap-1.5 px-2.5 py-1 text-[10px] tracking-wider uppercase font-medium text-[#F2EAD8] bg-[#1E1A16] hover:bg-[#2A2420] border border-[#F2EAD8]/20 rounded transition-colors duration-200"
+                                >
+                                  <span>GitHub</span>
+                                  <span>↗</span>
+                                </a>
+                              )}
+                            </div>
+                          )}
                         </div>
 
                         <div className="w-full mt-auto">

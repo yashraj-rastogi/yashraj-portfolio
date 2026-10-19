@@ -707,6 +707,43 @@ export default function HeroScene({ isOpen, onZoomComplete }: HeroSceneProps) {
             >
               Full-Stack Developer · AI Builder · Design Thinker
             </div>
+
+            {/* Open to internships indicator & jump button */}
+            {/* <div
+              style={{
+                position: "relative",
+                zIndex: 1,
+                pointerEvents: "auto",
+                marginTop: "1.25rem",
+              }}
+              className="flex items-center gap-3"
+            >
+              <div
+                style={{
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: "clamp(0.7rem, 1.2vw, 0.8rem)",
+                  letterSpacing: "0.12em",
+                  color: "#D4873A",
+                  background: "rgba(212, 135, 58, 0.08)",
+                  border: "1px solid rgba(212, 135, 58, 0.3)",
+                }}
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full uppercase"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#5A9E6F] animate-pulse" />
+                <span>Open to internships</span>
+                <span className="opacity-40 select-none">·</span>
+                <a
+                  href="mailto:yashrajrastogi7@gmail.com"
+                  style={{
+                    color: "var(--color-text-primary)",
+                  }}
+                  className="hover:text-[var(--color-accent-amber)] transition-colors underline font-medium"
+                  data-cursor="link"
+                >
+                  Contact ↗
+                </a>
+              </div>
+            </div> */}
           </motion.div>
         )}
       </AnimatePresence>

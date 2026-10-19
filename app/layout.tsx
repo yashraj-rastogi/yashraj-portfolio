@@ -35,14 +35,15 @@ const jetbrainsMono = JetBrains_Mono({
 
 // ── SEO Metadata ──────────────────────────────────────────────
 export const metadata: Metadata = {
+  metadataBase: new URL("https://yashraj-portfolio-indol.vercel.app"),
   title: "Yashraj Rastogi — Builder & Designer",
   description:
-    "Portfolio of Yashraj Rastogi — Full-Stack Developer, AI Builder, and Google Student Ambassador. Top 2% nationally at India AI Impact Buildathon. Building things that matter.",
+    "Portfolio of Yashraj Rastogi — Full-Stack Developer, AI Builder, and Former Google Student Ambassador. Top 2% nationally among 40,000+ participants at India AI Impact Buildathon. Building things that matter.",
   keywords: [
     "Yashraj Rastogi",
     "Full-Stack Developer",
     "AI Builder",
-    "Google Student Ambassador",
+    "Former Google Student Ambassador",
     "React",
     "Next.js",
     "Portfolio",
@@ -54,15 +55,26 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Yashraj Rastogi — Builder & Designer",
     description:
-      "Full-Stack Developer, AI Builder, and Google Student Ambassador. Top 2% nationally at India AI Impact Buildathon.",
+      "Full-Stack Developer, AI Builder, and Former Google Student Ambassador. Top 2% nationally among 40,000+ participants at India AI Impact Buildathon.",
+    url: "https://yashraj-portfolio-indol.vercel.app",
+    siteName: "Yashraj Rastogi Portfolio",
     type: "website",
     locale: "en_IN",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Yashraj Rastogi — Full-Stack Developer & AI Builder",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Yashraj Rastogi — Builder & Designer",
     description:
-      "Full-Stack Developer, AI Builder, and Google Student Ambassador. Top 2% nationally at India AI Impact Buildathon.",
+      "Full-Stack Developer, AI Builder, and Former Google Student Ambassador. Top 2% nationally among 40,000+ participants at India AI Impact Buildathon.",
+    images: ["/og.png"],
   },
 };
 

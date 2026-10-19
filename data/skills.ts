@@ -20,6 +20,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       "React.js (v18/v19)",
       "Next.js",
+      "Next.js 15",
       "Tailwind CSS v4",
       "TypeScript",
       "HTML5",
@@ -37,6 +38,9 @@ export const skillCategories: SkillCategory[] = [
       "Django",
       "FastAPI",
       "Cloud Functions",
+      "Twilio API",
+      "Razorpay",
+      "Paytm sandbox",
     ],
   },
   {
@@ -46,9 +50,12 @@ export const skillCategories: SkillCategory[] = [
     orbColor: "#D4873A",
     skills: [
       "Google Gemini AI",
+      "Gemini function calling",
       "PyTorch",
       "Hugging Face",
       "Wav2Vec 2.0",
+      "ElevenLabs",
+      "MediaPipe",
       "Librosa",
       "Explainable AI",
     ],

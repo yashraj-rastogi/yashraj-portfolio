@@ -110,25 +110,27 @@ export default function NewspaperHeadline({ achievement }: NewspaperHeadlineProp
         </motion.p>
       </div>
 
-      {/* Credential link / Read More button */}
-      <motion.div variants={lineVariants} className="w-full mt-auto pt-4">
-        <div className="w-12 h-[1px] bg-[#0D0B09]/30 mb-3" />
-        <a
-          href={achievement.credentialUrl || `#credential-${achievement.id}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            fontFamily: "'JetBrains Mono', monospace",
-            fontSize: "0.75rem",
-            letterSpacing: "0.1em",
-            color: "var(--color-accent-amber)",
-          }}
-          className="font-bold inline-flex items-center gap-1 hover:underline select-none no-underline transition-all duration-300"
-          data-cursor="link"
-        >
-          VERIFY ORIGINAL PRESS RELEASE <span className="text-[9px]">↗</span>
-        </a>
-      </motion.div>
+      {/* Credential link / View Credential button */}
+      {achievement.credentialUrl && (
+        <motion.div variants={lineVariants} className="w-full mt-auto pt-4">
+          <div className="w-12 h-[1px] bg-[#0D0B09]/30 mb-3" />
+          <a
+            href={achievement.credentialUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: "0.75rem",
+              letterSpacing: "0.1em",
+              color: "var(--color-accent-amber)",
+            }}
+            className="font-bold inline-flex items-center gap-1 hover:underline select-none no-underline transition-all duration-300"
+            data-cursor="link"
+          >
+            VIEW CREDENTIAL <span className="text-[9px]">↗</span>
+          </a>
+        </motion.div>
+      )}
     </motion.div>
   );
 }

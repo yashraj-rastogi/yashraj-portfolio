@@ -119,21 +119,23 @@ export default function CertStrip({ certifications }: CertStripProps) {
                 <div className="w-full mt-auto pt-4 flex flex-col items-center md:items-start gap-3">
                   <div className="w-12 h-[1px] bg-[#0D0B09]/20" />
                   
-                  <a
-                    href={cert.credentialUrl || `#credential-cert-${cert.name.toLowerCase().replace(/\s+/g, "-")}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      fontFamily: "'JetBrains Mono', monospace",
-                      fontSize: "0.7rem",
-                      letterSpacing: "0.05em",
-                      color: "var(--color-accent-amber)",
-                    }}
-                    className="font-bold inline-flex items-center gap-1 hover:underline select-none no-underline transition-all duration-300"
-                    data-cursor="link"
-                  >
-                    VERIFY ORIGINAL PRESS RELEASE <span className="text-[8px]">↗</span>
-                  </a>
+                  {cert.credentialUrl && (
+                    <a
+                      href={cert.credentialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        fontFamily: "'JetBrains Mono', monospace",
+                        fontSize: "0.7rem",
+                        letterSpacing: "0.05em",
+                        color: "var(--color-accent-amber)",
+                      }}
+                      className="font-bold inline-flex items-center gap-1 hover:underline select-none no-underline transition-all duration-300"
+                      data-cursor="link"
+                    >
+                      VIEW CREDENTIAL <span className="text-[8px]">↗</span>
+                    </a>
+                  )}
 
                   <div
                     style={{

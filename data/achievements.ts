@@ -21,18 +21,29 @@ export interface Certification {
 export const achievements: Achievement[] = [
   {
     id: "voiceguard-buildathon",
-    headline: "LUCKNOW UNDERGRADUATE RANKS TOP 2% NATIONALLY AMONG 40,000+ AI BUILDERS",
+    headline: "LUCKNOW UNDERGRADUATE RANKS TOP 2% NATIONALLY AMONG 40,000+ PARTICIPANTS",
     subhead:
       "Recognized at India AI Impact Buildathon for VoiceGuard, an AI-powered synthetic voice detection system",
     dateline: "HCL GUVI · February 2026",
     credentialUrl: "https://www.guvi.in/verify-certificate?id=8lA17t83Oc171254Vs",
   },
   {
-    id: "universe-coderush",
-    headline: "UNIVERSE PLATFORM BREAKS INTO TOP 10 AT NATIONAL CODERUSH HACKATHON",
+    id: "hack-nerds",
+    headline: "TOP 10 FINALIST — HACK NERDS HACKATHON (OFFLINE, PW IOI)",
     subhead:
-      "Real-time social platform with AI content moderation earns national recognition under competitive conditions",
+      "Recognized among top 10 finalists in intensive offline hackathon competition at Physics Wallah Institute of Innovation",
+    dateline: "Hack Nerds · PW IOI",
+    // TODO: [FILL IN: Hack Nerds result or certificate URL]
+    credentialUrl: undefined,
+  },
+  {
+    id: "coderush-2026",
+    headline: "TOP 10 FINALIST — CODERUSH HACKATHON 2026",
+    subhead:
+      "Earned national top 10 finalist standing under competitive timed hackathon conditions",
     dateline: "CodeRush Hackathon · 2026",
+    // TODO: [FILL IN: CodeRush result or certificate URL]
+    credentialUrl: undefined,
   },
   {
     id: "crisis-os-gdg",

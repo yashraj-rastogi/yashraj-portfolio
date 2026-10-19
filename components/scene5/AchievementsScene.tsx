@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { achievements, certifications } from "@/data/achievements";
 import NewspaperHeadline from "./NewspaperHeadline";
 import CertStrip from "./CertStrip";
+import GoogleBadgesRegistry from "./GoogleBadgesRegistry";
 
 interface AchievementsSceneProps {
   ref?: React.Ref<HTMLElement>;
@@ -165,37 +166,62 @@ export default function AchievementsScene({ ref }: AchievementsSceneProps) {
 
         {/* ── Broadsheet Newspaper Responsive Grid ── */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 w-full relative z-20">
-          {/* Left Column - Article 1 */}
+          {/* Left Column - Article 1: VoiceGuard */}
           <div className="w-full">
             <NewspaperHeadline achievement={achievements[0]} />
           </div>
           
-          {/* Right Column - Article 2 (Separated by vertical divider on desktop, horizontal on mobile) */}
+          {/* Right Column - Article 2: Hack Nerds */}
           <div className="w-full pt-10 md:pt-0 md:pl-12 lg:pl-16 border-t border-dashed border-[#0D0B09]/20 md:border-t-0 md:border-l">
             <NewspaperHeadline achievement={achievements[1]} />
           </div>
         </div>
 
+        {/* Secondary Stories Row */}
+        {achievements.length > 2 && (
+          <div className="w-full mt-14 pt-12 border-t-2 border-[#0D0B09]/15">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full relative z-20">
+              {achievements.slice(2).map((achievement, idx) => (
+                <div
+                  key={achievement.id}
+                  className={`w-full ${
+                    idx > 0
+                      ? "pt-8 md:pt-0 md:pl-8 border-t border-dashed border-[#0D0B09]/20 md:border-t-0 md:border-l"
+                      : ""
+                  }`}
+                >
+                  <NewspaperHeadline achievement={achievement} />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* ── Google Skills Badges Registry ── */}
+        <GoogleBadgesRegistry />
+
         {/* ── Scrolling Certification Strip Ticker Tape ── */}
         <CertStrip certifications={certifications} />
       </motion.div>
-      <span
-        style={{
-          display: "block",
-          textAlign: "center",
-          fontFamily: "'JetBrains Mono', monospace",
-          fontSize: "0.65rem",
-          letterSpacing: "0.2em",
-          color: "#4A3D2E",
-          opacity: 0.6,
-          paddingTop: "3rem",
-          paddingBottom: "1rem",
-          textTransform: "uppercase",
-        }}
-      >
-        [ These are not real headlines — they are for creative purposes ]
-      </span>
+
+      {/* Prominent Editorial Disclaimer Note */}
+      <div className="w-full max-w-4xl mx-auto text-center pt-14 pb-4 px-4 relative z-10">
+        <div className="inline-block px-6 py-2.5 rounded border border-[#0D0B09]/25 bg-[#EDE3D0]/60 backdrop-blur-sm">
+          <p
+            style={{
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: "clamp(0.78rem, 1.1vw, 0.9rem)",
+              letterSpacing: "0.15em",
+              color: "#2C2219",
+              lineHeight: 1.5,
+              fontWeight: 600,
+            }}
+            className="uppercase m-0"
+          >
+            [ NOTE: These are not real newspaper headlines — they are for creative presentation purposes ]
+          </p>
+        </div>
+      </div>
     </section>
   );
-
 }

@@ -139,7 +139,7 @@ export default function ContactScene({ ref }: ContactSceneProps) {
           }}
           className="mb-8 select-none pointer-events-none leading-relaxed"
         >
-          &ldquo;Decisions decide destiny..!!&rdquo;
+          &ldquo;Decisions decide destiny.&rdquo;
         </motion.blockquote>
 
         {/* Attribution */}
@@ -203,7 +203,7 @@ export default function ContactScene({ ref }: ContactSceneProps) {
               textAlign: "center",
             }}
           >
-            I hope you are impressed...!!
+            Let&apos;s build something together.
           </div>
 
           {/* Light revealed layer (Spotlight clipped circle) */}
@@ -224,7 +224,7 @@ export default function ContactScene({ ref }: ContactSceneProps) {
               textAlign: "center",
             }}
           >
-            I hope you are impressed...!!
+            Let&apos;s build something together.
           </div>
         </motion.div>
 
